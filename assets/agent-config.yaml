@@ -1,0 +1,168 @@
+apiVersion: v1alpha1
+kind: AgentConfig
+metadata:
+  name: bm1 
+rendezvousIP: 192.168.89.200
+hosts:
+  - hostname: bm200
+    role: master
+    interfaces:
+      - name: eth0
+        macAddress: 52:54:00:e1:49:2c
+    networkConfig:
+      interfaces:
+      - name: eth0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:e1:49:2c
+        ipv4:
+          enabled: true
+          address:
+            - ip: 192.168.89.200
+              prefix-length: 23
+          dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.89.1
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.89.1
+            next-hop-interface: eth0
+            table-id: 254
+  - hostname: bm201
+    role: master
+    interfaces:
+    - name: eth0
+      macAddress: 52:54:00:84:05:30
+    networkConfig:
+      interfaces:
+      - name: eth0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:84:05:30
+        ipv4:
+          enabled: true
+          address:
+            - ip: 192.168.89.201
+              prefix-length: 23
+          dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.89.1
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.89.1
+            next-hop-interface: eth0
+            table-id: 254
+  - hostname: bm202
+    role: master
+    interfaces:
+    - name: eth0
+      macAddress: 52:54:00:9b:df:3f
+    networkConfig:
+      interfaces:
+      - name: eth0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:9b:df:3f
+        ipv4:
+          enabled: true
+          address:
+            - ip: 192.168.89.202
+              prefix-length: 23
+          dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.89.1
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.89.1
+            next-hop-interface: eth0
+            table-id: 254
+  - hostname: bm203
+    role: worker
+    interfaces:
+    - name: eth0
+      macAddress: 52:54:00:d0:48:be
+    networkConfig:
+      interfaces:
+      - name: eth0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:d0:48:be
+        ipv4:
+          enabled: true
+          address:
+            - ip: 192.168.89.203
+              prefix-length: 23
+          dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.89.1
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.89.1
+            next-hop-interface: eth0
+            table-id: 254
+  - hostname: bm204
+    role: worker
+    interfaces:
+    - name: eth0
+      macAddress: 52:54:00:a9:f6:64
+    networkConfig:
+      interfaces:
+      - name: eth0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:a9:f6:64
+        ipv4:
+          enabled: true
+          address:
+            - ip: 192.168.89.204
+              prefix-length: 23
+          dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.89.1
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.89.1
+            next-hop-interface: eth0
+            table-id: 254
+  - hostname: bm205
+    role: worker
+    interfaces:
+    - name: eth0
+      macAddress: 52:54:00:c6:e6:43
+    networkConfig:
+      interfaces:
+      - name: eth0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:c6:e6:43
+        ipv4:
+          enabled: true
+          address:
+            - ip: 192.168.89.205
+              prefix-length: 23
+          dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.89.1
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.89.1
+            next-hop-interface: eth0
+            table-id: 254
