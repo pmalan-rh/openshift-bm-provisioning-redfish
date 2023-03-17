@@ -1,0 +1,36 @@
+additionalTrustBundlePolicy: Proxyonly
+apiVersion: v1
+baseDomain: pietersmalan.com
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  replicas: 3
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+metadata:
+  creationTimestamp: null
+  name: bm1
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 192.168.89.0/24
+  networkType: OVNKubernetes
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  baremetal:
+    apiVIPs:
+    - 192.168.89.211
+    ingressVIPs:
+    - 192.168.89.210
+publish: External
+pullSecret: '{"auths":{"....}}'
+sshKey: |
+  ssh-rsa .. openshift@bastion.pietersmalan.com
+

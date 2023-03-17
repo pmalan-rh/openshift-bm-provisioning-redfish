@@ -1,0 +1,15 @@
+:icons: font
+
+= Provision BareMetal Cluster with Agent and ACM's Multicluster Engine
+
+== Steps
+
+The following steps were followed to get a cluster up and running on multiple bare metal hosts, with the abaility to scale out, or add clusters to the environment:
+- Initial Cluster Definition - standard assets/install-config.yaml
+- Using the Agent to deploy cluster - assets/agent-config.yaml
+- Add LVM Storage - assets/post-install/lvm*.yaml
+- Multi Cluster Engine -assets/post-install/mce*.yaml
+-- oc patch provisioning provisioning-configuration --type merge -p '{"spec":{"watchAllNamespaces": true }}'
+-- Create 
+- KlusterAddonConfig
+
