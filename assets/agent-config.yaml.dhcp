@@ -1,0 +1,93 @@
+apiVersion: v1alpha1
+kind: AgentConfig
+metadata:
+  name: bm1
+rendezvousIP: 10.0.1.200
+hosts:
+  - hostname: bm200
+    role: master
+    interfaces:
+      - name: enp5s0
+        macAddress: 52:54:00:e1:49:2c
+    networkConfig:
+      interfaces:
+      - name: enp5s0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:e1:49:2c
+        ipv4:
+          enabled: true
+          dhcp: true
+  - hostname: bm201
+    role: master
+    interfaces:
+    - name: enp5s0
+      macAddress: 52:54:00:84:05:30
+    networkConfig:
+      interfaces:
+      - name: enp5s0
+        type: ethernet
+        state: up    networkConfig:
+      interfaces:
+      - name: enp5s0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:9b:df:3f
+        ipv4:
+          enabled: true
+          dhcp: true  - hostname: bm204
+    role: worker
+    interfaces:
+    - name: enp5s0
+      macAddress: 52:54:00:a9:f6:64
+    networkConfig:
+      interfaces:
+      - name: enp5s0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:a9:f6:64
+        ipv4:
+          enabled: true
+          dhcp: true
+  - hostname: bm205
+    role: worker
+    interfaces:
+    - name: enp5s0
+      macAddress: 52:54:00:c6:e6:43
+    networkConfig:
+      interfaces:
+      - name: enp5s0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:c6:e6:43
+        ipv4:
+          enabled: true
+          dhcp: true
+
+
+  - hostname: bm203
+    role: worker
+    interfaces:
+    - name: enp5s0
+      macAddress: 52:54:00:d0:48:be
+    networkConfig:
+      interfaces:
+      - name: enp5s0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:d0:48:be
+        ipv4:
+          enabled: true
+          dhcp: true
+          
+
+        mac-address: 52:54:00:84:05:30
+        ipv4:
+          enabled: true
+          dhcp: true
+  - hostname: bm202
+    role: master
+    interfaces:
+    - name: enp5s0
+      macAddress: 52:54:00:9b:df:3f
+      
