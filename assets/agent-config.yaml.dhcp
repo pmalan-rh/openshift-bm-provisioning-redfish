@@ -1,7 +1,7 @@
 apiVersion: v1alpha1
 kind: AgentConfig
 metadata:
-  name: bm1
+  name: bm1 
 rendezvousIP: 10.0.1.200
 hosts:
   - hostname: bm200
@@ -27,7 +27,17 @@ hosts:
       interfaces:
       - name: enp5s0
         type: ethernet
-        state: up    networkConfig:
+        state: up
+        mac-address: 52:54:00:84:05:30
+        ipv4:
+          enabled: true
+          dhcp: true
+  - hostname: bm202
+    role: master
+    interfaces:
+    - name: enp5s0
+      macAddress: 52:54:00:9b:df:3f
+    networkConfig:
       interfaces:
       - name: enp5s0
         type: ethernet
@@ -35,7 +45,22 @@ hosts:
         mac-address: 52:54:00:9b:df:3f
         ipv4:
           enabled: true
-          dhcp: true  - hostname: bm204
+          dhcp: true
+  - hostname: bm203
+    role: worker
+    interfaces:
+    - name: enp5s0
+      macAddress: 52:54:00:d0:48:be
+    networkConfig:
+      interfaces:
+      - name: enp5s0
+        type: ethernet
+        state: up
+        mac-address: 52:54:00:d0:48:be
+        ipv4:
+          enabled: true
+          dhcp: true
+  - hostname: bm204
     role: worker
     interfaces:
     - name: enp5s0
@@ -63,31 +88,3 @@ hosts:
         ipv4:
           enabled: true
           dhcp: true
-
-
-  - hostname: bm203
-    role: worker
-    interfaces:
-    - name: enp5s0
-      macAddress: 52:54:00:d0:48:be
-    networkConfig:
-      interfaces:
-      - name: enp5s0
-        type: ethernet
-        state: up
-        mac-address: 52:54:00:d0:48:be
-        ipv4:
-          enabled: true
-          dhcp: true
-          
-
-        mac-address: 52:54:00:84:05:30
-        ipv4:
-          enabled: true
-          dhcp: true
-  - hostname: bm202
-    role: master
-    interfaces:
-    - name: enp5s0
-      macAddress: 52:54:00:9b:df:3f
-      
