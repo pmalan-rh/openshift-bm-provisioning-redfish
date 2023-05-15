@@ -1,8 +1,6 @@
 :icons: font
 
-= Provision BareMetal Cluster with Agent and ACM's Multicluster Engine
-
-== Steps
+== Provision BareMetal Cluster with Agent
 
 The following steps were followed to get a cluster up and running on multiple bare metal hosts, with the abaility to scale out, or add clusters to the environment:
 
@@ -16,7 +14,21 @@ The following steps were followed to get a cluster up and running on multiple ba
 
 -- oc patch provisioning provisioning-configuration --type merge -p '{"spec":{"watchAllNamespaces": true }}'
 
--- Create 
 
+== Install Virtual BMC
+
+On your vbmc machine:
+ 
+- Install KCLI - https://github.com/karmab/kcli
+
+  curl -s https://raw.githubusercontent.com/karmab/kcli/main/install.sh | bash
+  
+ - Setup ~/.kcli/config.yaml 
+ - Change curl default behaviour for curl
+    echo "insecure" > ~/.curlrc
+    
+ (have to figure out why ip instead of host name in acm)
+ 
+ 
 
 
