@@ -1,0 +1,16 @@
+# Sample ~/.kcli/config.yaml for ovirt (with SSO)
+# CA file is the downloaded CA from oVirt/RHEV homepage -> Downloads -> Engine CA Certificates
+
+default:
+ client: myovirt
+
+myovirt:
+ type: ovirt
+ host: ovirt1.pietersmalan.com
+ user: admin@ovirt@internal
+ password: 'supersecret'
+ datacenter: Default
+ cluster: Default
+ pool: DATA_ISCSI
+ org: internal
+ ca_file: ~/.kcli/ca.pem
