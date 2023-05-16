@@ -23,7 +23,8 @@ On your vbmc machine:
 
   curl -s https://raw.githubusercontent.com/karmab/kcli/main/install.sh | bash
   
- - Setup ~/.kcli/config.yaml 
+ - Setup ~/.kcli/config.yaml for your specific provider (AWS,IBM,GCP,LibVirt, KubeVirt, Openstack, OVirt, VSphere)
+   Only providers with storage providers supports REDFISH+VIRTUALMEDIA
  - Change curl default behaviour for curl
     echo "insecure" > ~/.curlrc
     
